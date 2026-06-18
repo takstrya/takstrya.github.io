@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Verdana, Geneva, sans-serif;
+  --font-display: "Courier New", Courier, monospace;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+@layer base {
+  html {
+    @apply bg-black text-white antialiased;
+  }
+
+  body {
+    @apply min-h-dvh overflow-x-hidden font-sans text-sm;
+  }
+
+  ::selection {
+    @apply bg-white text-black;
+  }
+}
+
+@keyframes drift-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(6px, -8px) rotate(0.4deg);
+  }
+  50% {
+    transform: translate(-5px, 6px) rotate(-0.3deg);
+  }
+  75% {
+    transform: translate(7px, 5px) rotate(0.25deg);
+  }
+}
+
+@keyframes drift-medium {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(-8px, 7px) rotate(-0.45deg);
+  }
+  66% {
+    transform: translate(7px, -9px) rotate(0.35deg);
+  }
+}
+
+@keyframes drift-fast {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(8px, -10px) rotate(-0.5deg);
+  }
+  50% {
+    transform: translate(-7px, 8px) rotate(0.4deg);
+  }
+  75% {
+    transform: translate(6px, -6px) rotate(-0.3deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-8vh) translateX(0);
+  }
+  100% {
+    transform: translateY(108vh) translateX(var(--snow-drift, 0px));
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-drift-slow {
+  animation: drift-slow 11s ease-in-out infinite;
+}
+
+.animate-drift-medium {
+  animation: drift-medium 8.5s ease-in-out infinite;
+}
+
+.animate-drift-fast {
+  animation: drift-fast 7s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.animate-flicker {
+  animation: flicker 4s ease-in-out infinite;
+}
+
+.snowfall-layer {
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 50%,
+    rgb(0 0 0 / 45%) 72%,
+    transparent 92%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 50%,
+    rgb(0 0 0 / 45%) 72%,
+    transparent 92%
+  );
+}
+
+.snow-ground {
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  height: 30vh;
+  background:
+    radial-gradient(
+      ellipse 50% 65% at 15% 100%,
+      rgb(205 205 205 / 10%) 0%,
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 50% 65% at 85% 100%,
+      rgb(205 205 205 / 10%) 0%,
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 110% 55% at 50% 100%,
+      rgb(230 230 230 / 18%) 0%,
+      rgb(200 200 200 / 9%) 38%,
+      rgb(170 170 170 / 4%) 58%,
+      transparent 78%
+    );
+}
+
+.animate-snowfall {
+  top: -8vh;
+  animation: snowfall linear infinite;
+}
