@@ -37,7 +37,7 @@ export function LinkButton({ link }: LinkButtonProps) {
       href={link.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${base} hover:bg-white hover:text-black`}
+      className={`relative z-10 ${base} hover:bg-white hover:text-black`}
     >
       {content}
     </a>

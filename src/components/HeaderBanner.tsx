@@ -7,9 +7,9 @@ export function HeaderBanner() {
         <img
           src="/my-links-sign.png"
           alt="My Links"
-          className="mb-2 w-full max-w-[240px] object-contain sm:max-w-[280px]"
+          className="mb-0 w-full max-w-[300px] object-contain sm:max-w-[360px]"
         />
-        <h1 className="font-display text-4xl tracking-[0.2em] text-white animate-flicker">
+        <h1 className="mt-1 font-sans text-2xl tracking-[0.2em] text-white animate-flicker sm:text-3xl">
           {"takumisf"}
         </h1>
         <p className="mt-2 text-[10px] uppercase tracking-[0.35em] text-white/35">

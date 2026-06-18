@@ -22,18 +22,39 @@ export default function App() {
             — explore —
           </p>
 
-          <div className="flex flex-col gap-8">
+          <div className="relative flex flex-col gap-8">
             <div className="flex items-start justify-between gap-6">
-              <RetroWindow title={spotify!.title} drift="slow" width="sm">
+              <RetroWindow
+                title={spotify!.title}
+                drift="slow"
+                driftDelay={0.6}
+                width="sm"
+              >
                 <LinkButton link={spotify!} />
               </RetroWindow>
 
-              <DriftingIcon label="takumi" symbol="匠" />
+              <DriftingIcon
+                label="takumi"
+                symbol="匠"
+                drift="fast"
+                driftDelay={0}
+              />
             </div>
 
             <div className="flex items-start justify-between gap-6 pl-2 pt-3">
-              <DriftingIcon label="maybe..." symbol="缘分" />
-              <RetroWindow title="channels" drift="medium" width="lg">
+              <DriftingIcon
+                label="me, kinda"
+                image="/profile.png"
+                imageAlt="takumi"
+                drift="slow"
+                driftDelay={4.8}
+              />
+              <RetroWindow
+                title="channels"
+                drift="medium"
+                driftDelay={2.1}
+                width="lg"
+              >
                 <div className="flex flex-col gap-2">
                   <LinkButton link={youtube!} />
                   <LinkButton link={bandcamp!} />
@@ -41,17 +62,30 @@ export default function App() {
               </RetroWindow>
             </div>
 
-            <div className="flex justify-start">
-              <RetroWindow title="coming soon" drift="slow" width="md">
+            <div className="flex items-start justify-between gap-6">
+              <RetroWindow
+                title="coming soon"
+                drift="slow"
+                driftDelay={3.5}
+                width="md"
+              >
                 <div className="flex flex-col gap-2">
                   <LinkButton link={discord!} />
                   <LinkButton link={website!} />
                 </div>
               </RetroWindow>
+
+              <DriftingIcon
+                label="maybe..."
+                symbol="缘分"
+                drift="medium"
+                driftDelay={2.4}
+                className="mr-4"
+              />
             </div>
           </div>
 
-          <footer className="mt-12 border-t border-dashed border-white/20 pt-4 text-center text-[10px] text-white/20">
+          <footer className="relative z-20 mt-12 border-t border-dashed border-white/20 pt-4 text-center text-[10px] text-white/20">
             <p>last updated: 6/18/26</p>
             <p className="mt-1">ig: takumisf</p>
           </footer>
