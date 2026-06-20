@@ -34,8 +34,8 @@ export default function App() {
               </RetroWindow>
 
               <DriftingIcon
-                label="takumi"
-                symbol="匠"
+                label="artisan of music, hopefully"
+                symbol=" 匠; takumi  "
                 drift="fast"
                 driftDelay={0}
               />
@@ -76,10 +76,11 @@ export default function App() {
               </RetroWindow>
 
               <DriftingIcon
-                label="maybe..."
-                symbol="缘分"
+                label="thanks but no thanks"
+                symbol="stay strong"
                 drift="medium"
                 driftDelay={2.4}
+                labelClassName="line-through"
                 className="mr-4"
               />
             </div>

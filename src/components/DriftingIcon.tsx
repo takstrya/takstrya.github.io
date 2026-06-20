@@ -7,6 +7,7 @@ type DriftingIconProps = {
   imageAlt?: string;
   drift?: DriftPreset;
   driftDelay?: number;
+  labelClassName?: string;
   className?: string;
 };
 
@@ -29,6 +30,7 @@ export function DriftingIcon({
   imageAlt,
   drift = "fast",
   driftDelay = 0,
+  labelClassName = "",
   className = "",
 }: DriftingIconProps) {
   return (
@@ -50,7 +52,7 @@ export function DriftingIcon({
       ) : (
         <div className="font-display text-2xl leading-none">{symbol}</div>
       )}
-      <div className="mt-1 text-[9px] tracking-widest text-white/40">{label}</div>
+      <div className={`mt-1 text-[9px] tracking-widest text-white/40 ${labelClassName}`}>{label}</div>
     </div>
   );
 }
