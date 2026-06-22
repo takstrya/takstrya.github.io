@@ -8,7 +8,7 @@ export type SocialLink = {
 };
 
 export const SITE = {
-  name: "takstrya",
+  name: "takstrya//takumisf",
   tagline: "somewhere on the internet",
 };
 

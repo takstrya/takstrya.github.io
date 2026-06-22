@@ -1,5 +1,6 @@
 import { HeaderBanner } from "./components/HeaderBanner";
 import { MarqueeBar } from "./components/MarqueeBar";
+import { SceneBackdrop } from "./components/SceneBackdrop";
 import { Snowfall } from "./components/Snowfall";
 import { RetroWindow } from "./components/RetroWindow";
 import { DriftingIcon } from "./components/DriftingIcon";
@@ -11,6 +12,7 @@ const [spotify, youtube, bandcamp, discord, website] = SOCIAL_LINKS;
 export default function App() {
   return (
     <div className="relative min-h-dvh bg-black">
+      <SceneBackdrop />
       <Snowfall />
 
       <div className="relative z-10 mx-auto min-h-dvh max-w-md">
@@ -77,7 +79,8 @@ export default function App() {
 
               <DriftingIcon
                 label="thanks but no thanks"
-                symbol="stay strong"
+                image="/stay-strong.png"
+                imageAlt="stay strong"
                 drift="medium"
                 driftDelay={2.4}
                 labelClassName="line-through"
@@ -87,7 +90,7 @@ export default function App() {
           </div>
 
           <footer className="relative z-20 mt-12 border-t border-dashed border-white/20 pt-4 text-center text-[10px] text-white/20">
-            <p>last updated: 6/18/26</p>
+            <p>last updated: 6/21/26</p>
             <p className="mt-1">ig: takumisf</p>
           </footer>
         </main>

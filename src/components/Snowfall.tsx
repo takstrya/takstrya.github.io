@@ -7,6 +7,7 @@ type Flake = {
   duration: number;
   delay: number;
   drift: number;
+  sway: number;
   opacity: number;
 };
 
@@ -20,11 +21,12 @@ function createFlakes(): Flake[] {
   return Array.from({ length: FLAKE_COUNT }, (_, id) => ({
     id,
     left: randomBetween(0, 100),
-    size: randomBetween(2, 5),
+    size: randomBetween(1.5, 8),
     duration: randomBetween(9, 20),
     delay: randomBetween(0, 20),
-    drift: randomBetween(-36, 36),
-    opacity: randomBetween(0.2, 0.6),
+    drift: randomBetween(-72, 72),
+    sway: randomBetween(22, 68) * (Math.random() < 0.5 ? -1 : 1),
+    opacity: randomBetween(0.08, 0.85),
   }));
 }
 
@@ -34,7 +36,7 @@ export function Snowfall() {
   return (
     <>
       <div className="snow-ground" aria-hidden="true" />
-      <div className="snowfall-layer pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+      <div className="snowfall-layer pointer-events-none fixed inset-0 z-[1] overflow-hidden" aria-hidden="true">
       {flakes.map((flake) => (
         <span
           key={flake.id}
@@ -45,6 +47,7 @@ export function Snowfall() {
             height: flake.size,
             opacity: flake.opacity,
             ["--snow-drift" as string]: `${flake.drift}px`,
+            ["--snow-sway" as string]: `${flake.sway}px`,
             animationDuration: `${flake.duration}s`,
             animationDelay: `${flake.delay}s`,
           }}

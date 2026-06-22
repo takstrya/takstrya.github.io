@@ -9,8 +9,8 @@ export function HeaderBanner() {
           alt="My Links"
           className="mb-0 w-full max-w-[300px] object-contain sm:max-w-[360px]"
         />
-        <h1 className="mt-1 font-sans text-2xl tracking-[0.2em] text-white animate-flicker sm:text-3xl">
-          {"takumisf"}
+        <h1 className="mt-1 font-sans text-lg tracking-[0.2em] text-white animate-flicker sm:text-3lg">
+          {"takumisf || takstrya"}
         </h1>
         <p className="mt-2 text-[10px] uppercase tracking-[0.35em] text-white/35">
           {""}
