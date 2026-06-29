@@ -5,7 +5,7 @@ import { Snowfall } from "./components/Snowfall";
 import { RetroWindow } from "./components/RetroWindow";
 import { DriftingIcon } from "./components/DriftingIcon";
 import { LinkButton } from "./components/LinkButton";
-import { SOCIAL_LINKS } from "./config/links";
+import { SOCIAL_LINKS, NEW_RELEASE } from "./config/links";
 
 const [spotify, youtube, bandcamp, discord, website] = SOCIAL_LINKS;
 
@@ -27,12 +27,12 @@ export default function App() {
           <div className="relative flex flex-col gap-8">
             <div className="flex items-start justify-between gap-6">
               <RetroWindow
-                title={spotify!.title}
+                title={NEW_RELEASE.title}
                 drift="slow"
                 driftDelay={0.6}
-                width="sm"
+                width="md"
               >
-                <LinkButton link={spotify!} />
+                <LinkButton link={NEW_RELEASE} />
               </RetroWindow>
 
               <DriftingIcon
@@ -60,6 +60,7 @@ export default function App() {
                 <div className="flex flex-col gap-2">
                   <LinkButton link={youtube!} />
                   <LinkButton link={bandcamp!} />
+                  <LinkButton link={spotify!} />
                 </div>
               </RetroWindow>
             </div>

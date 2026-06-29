@@ -4,6 +4,7 @@ export type SocialLink = {
   title: string;
   href?: string;
   underConstruction?: boolean;
+  normalCase?: boolean;
   icon: string;
 };
 
@@ -14,6 +15,15 @@ export const SITE = {
 
 export const MARQUEE_TEXT =
   "welcome to my world /// miku is god /// thank you music /// overcoming my everyday /// ";
+
+export const NEW_RELEASE: SocialLink = {
+  id: "new-release",
+  label: "i drink and drive (ft. teto)",
+  title: "new releases",
+  href: "https://www.youtube.com/watch?v=r9-LhM0-Hj8",
+  icon: "▶",
+  normalCase: true,
+};
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {

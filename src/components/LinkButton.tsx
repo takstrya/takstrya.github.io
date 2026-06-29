@@ -12,7 +12,11 @@ export function LinkButton({ link }: LinkButtonProps) {
     <>
       <span className="font-display text-lg leading-none">{link.icon}</span>
       <span className="flex flex-col">
-        <span className="text-xs uppercase tracking-widest">{link.label}</span>
+        <span
+          className={`text-xs tracking-widest ${link.normalCase ? "normal-case" : "uppercase"}`}
+        >
+          {link.label}
+        </span>
         {link.underConstruction && (
           <span className="text-[10px] text-white/40">[ under construction ]</span>
         )}
